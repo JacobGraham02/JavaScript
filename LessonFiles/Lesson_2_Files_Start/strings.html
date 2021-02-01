@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Strings | COMP1073 Client-Side JavaScript</title>
+	<link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+	<h1>Strings</h1>
+	<p></p>
+</body>
+<script>
+    var output = document.querySelector('p');
+    
+    /* STEP 1: Creating Strings */
+    let step1 = "This is a string."; // `` also indicates a string
+    output.textContent=step1;
+
+    // Note - whether you use 'single' or "double" quotes is a personal preference - try to be consistent
+
+
+    /* STEP 2: Escaping Characters */
+    let step2 = "Scott says: \n \"You're a mean one, Mr. Bitch\"";
+    output.textContent=step2;
+
+    /* STEP 3: Concatenation */
+    let step3a = "JavaScript";
+    let step3b = "rocks.";
+    let joined=step3a + " " + step3b;
+    output.textContent = joined;
+
+    /* STEP 4: Numbers and Strings */
+    let step4a = "Fahrenheit " + 451;
+    output.textContent = step4a;
+
+    let step4b = "20" + "21";
+    output.textContent=step4b;
+
+    // numbers can be converted to strings
+    let step4c = Number(step4b);   
+    let step4c = 2021;
+    let step4d = step4c.toString();
+    // strings can be converted to numbers, too
+    let step4e = Number(step4d);
+    // and back again, if we want
+    
+
+</script>
+</html>
