@@ -42,7 +42,7 @@
 			Without the ability to edit the contents of an array, this type of variable would have limited use - but adding and removing array items is pretty straightforward */
 
 
-			// Adding one or more items to an array with push()
+			// Adding one or more items to an array with push() end of array
 			originalSixArray.push("Pittsburg Penguins");
 			
 			// If you would like to capture how many elements are in the array after you have edited it, then…

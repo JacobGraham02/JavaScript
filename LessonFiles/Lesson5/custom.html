@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Functions - Custom | COMP1073 Client-Side JavaScript</title>
+	<link href="resources/styles/styles.css" rel="stylesheet" />
+	<style>
+		.msgPanel {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			width: 20rem;
+			background: grey;
+			line-height: 1.5;
+			padding: 2rem;
+			color: #333;
+		}
+		.msgPanel button {
+			background: none;
+			border: none;
+			position: absolute;
+			top: 0.25rem;
+			right: 0.25rem;
+			font-size: 1.25rem;
+			color: #333;
+		}
+		/* JavaScript classes for interaction */
+		.error {
+			background-color: lightpink;
+		}
+		.warning {
+			background-color: lemonchiffon;
+		}
+		.default {
+			background-color: lightblue;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="h1CustomFunction">Custom functions</h1>
+	<button>Display alert box</button>
+
+	<script src="resources/scripts/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Loops | COMP1073 Client-Side JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+	<h1>Loops</h1>
+	<p>Often, a program or script will need to be able to do something repetitively. Building these looping structures and devising ways to decide when to stop or exit them is a critical tool for your client-side toolbox.</p>
+
+	<h2>My Courses</h2>
+	<p id="courses"></p>
+
+	<h2>City Search</h2>
+	<label for="search">Search by city name: </label>
+	<input id="search" type="text">
+	<button id="cities">Search</button>
+	<p id="searchResult"></p>
+
+	<h2>Skipping Iterations</h2>
+	<p id="numberList"></p>
+	<script>
+		let courses = ['Intro to Web Programming', 'Client-Side JavaScript', 'Bitmap & Vector Graphics', 'Web UI Design with CSS', 'Relational Database'];
+		let courseList = 'My courses this term are ';
+		const msg = document.querySelector('#courses');
+		/* STEP 1a: A simple FOR loop
+		A simple loop of this structure needs an initializer (counter variable), an exit conditional, and and incrementor/decrementor */
+
+		for (let i = 0; i < courses.length; i++) {
+			if (i === courses.length-1) {
+				courseList += "and " + courses[i] + ".";
+			} else {
+				courseList += courses[i] + ", ";
+			}
+		};
+		// courseList = courses.join(", ");
+
+		msg.textContent = courseList;
+		// STEP 1b: Add a conditional for the last item in the array so we can finish the sentence with a period.
+
+		/* STEP 2: Exit a loop with break */
+		let cities = ['Toronto', 'Montreal', 'Ottawa', 'Vancouver', 'Halifax'];
+		const result = document.querySelector('#searchResult');
+		const input = document.querySelector('input');
+		const btn = document.querySelector('button#cities');
+
+		btn.addEventListener('click', function() {
+			var searchName = input.value;
+			input.value = '';
+			input.focus();
+			/* STEP 2a: Create a FOR loop to iterate through the cities array */
+			for (let i = 0; i < cities.length; i++) {
+				if (searchName === cities[i] ) {
+					result.textContent = searchName + " is number " + (i+1) + " in the array.";
+					break;
+				} else {
+					result.textContent = "City not found in the array";
+				}
+				/* STEP 2b: Build an IF/ELSE conditional that compares searchName with cities[i] */
+			}
+
+		});
+
+
+
+		/* STEP 3: Skip a loop interation with continue */
+		const numberList = document.querySelector('#numberList');
+		let num = 50;
+		for (let i = 1; i <= num; i++) {
+			let sqRoot = Math.sqrt(i);
+			/* STEP 3a: Build an IF statement that checks whether the square root of the number is NOT an integer */
+			//if () {
+				if (Math.floor(sqRoot) !== sqRoot) {
+					continue;
+					/* STEP 3b: If the square root of the number is not an integer, we don't want to output it to the paragraph, so skip the rest of the instructions inside this loop and go back up to the FOR, using 'continue' */
+				}
+				
+			//}
+			numberList.textContent += i + " ";
+		}
+
+		/* STEP 4: WHILE and DO/WHILE loops */
+
+		let i = 0;
+		let outputWhile = "";
+		/* STEP 4a: WHILE loop to iterate through the cities array (created above in STEP 2) */
+		while (i < cities.length) {
+
+			if (i === cities.length - 1) {
+				outputWhile += "and " + cities[i] + ".";
+			} else {
+				outputWhile += cities[i] + ", ";
+			}
+			i++;
+		};
+		console.log(outputWhile);
+		
+
+		// let k = 0;
+		// let outputDo = "";
+		// /* STEP 4b: DO/WHILE loop - grab the above IF/ELSE and the 'i++', then create the very same output with DO/WHILE (uncomment the above 'i = 0', first) */
+		// do {
+		// 	if (k === cities.length - 1) {
+		// 		outputDo += "and " + cities[k] + ".";
+		// 	} else {
+		// 		outputDo += cities[k] + ", ";
+		// 	}
+		// 	k++;
+		// } while (k < cities.length);
+
+		//console.log(outputDo);
+
+		let tempArr = [];
+		let tempStr = "";
+		let k = cities.length - 1;
+		do {
+			if (k === 0) {
+				
+			}
+			tempArr.push(cities[k]);
+			k--;
+		} while (k > -1);
+		
+		tempArr.forEach(element => tempStr += element + " ");
+		console.log(tempStr);
+
+		//console.log(cities.reverse());
+		/* …now try to loop through the same array backwards! */
+
+		// This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code
+	</script>
+</body>
+</html>

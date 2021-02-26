@@ -73,4 +73,14 @@ function result() {
 randomize.addEventListener('click', result);
 
 // This lab based on the excellent assessment challenge at https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Silly_story_generator
+var myArray = [12, 45, 26, 68, 92]; // Unshift returns the new length of the array
+var myVar = myArray.unshift(73, 29);
+console.log(myVar);
 
+var myArray = [12, 45, 26, 68, 92]; // push returns the number of elements in array after adding
+var myVar = myArray.push(31);
+console.log(myVar);
+
+var myArray = [12, 45, 26, 68, 92]; // pop returns the element popped from array
+var myVar = myArray.pop();
+console.log(myVar);

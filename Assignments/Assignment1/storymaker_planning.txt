@@ -1,0 +1,8 @@
+Surprise - Makes up random sentence
+Repeat - Repeats previous sentence
+
+First - noun. Purple
+Second - Verb. Cyan
+Third - Adjective. Green
+Fourth - Noun. Orange
+Fifth - Noun. Purple
